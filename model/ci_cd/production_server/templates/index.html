@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .image-container {
+            display: none;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 400px;
+        }
+        .content-container {
+            margin-bottom: 20px;
+        }
+        .content-container pre {
+            white-space: pre-wrap;
+        }
+    </style>
+    <script>
+        function showImages() {
+            var imageContainer = document.getElementById("image-container");
+            imageContainer.style.display = "flex";
+        }
+    </script>
+</head>
+<body>
+    <h1>Model Results</h1>
+    <div class="content-container">
+        <h2>Best Model</h2>
+        <pre>{{ best_model }}</pre>
+    </div>
+    <button onclick="showImages()">Show Images</button>
+    <div id="image-container" class="image-container">
+        <div>
+            <h2>Correlation Matrix</h2>
+            <img src="{{ url_for('correlation_matrix') }}" alt="Correlation Matrix">
+        </div>
+        <div>
+            <h2>Covariance Matrix</h2>
+            <img src="{{ url_for('covariance_matrix') }}" alt="Covariance Matrix">
+        </div>
+        <div>
+            <h2>Predicted vs Actual</h2>
+            <img src="{{ url_for('predicted_vs_actual') }}" alt="Predicted vs Actual">
+        </div>
+    </div>
+</body>
+</html>
