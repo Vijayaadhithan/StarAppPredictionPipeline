@@ -9,7 +9,7 @@ from numpy import loadtxt
 def get_github_repo(page=1):
 
     # GitHub auth token to get access
-    auth = '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'
+    auth = 'token'
 
     search_params = {
         'q': 'stars:>=50',
@@ -68,24 +68,10 @@ def get_github_repo(page=1):
     return repo_features
 
 
-# Process repo feature inputs, i.e one hot encode "language" and transform the date
-def preprocess_data(data):
-    data["created_at"] = pd.to_datetime(data["created_at"])
-    data['created_at'] = data['created_at'].dt.year
-    data["updated_at"] = pd.to_datetime(data["updated_at"])
-    data['updated_at'] = data['updated_at'].dt.year # this can also be converted to include months
-
-    if "language" in data.columns:
-        encoded = pd.get_dummies(data["language"], prefix="language")
-        data = pd.concat([data, encoded], axis=1)
-        data = data.drop(columns=["language"])
-    return data
-
 
 repo_features = get_github_repo()
 
-df = pd.DataFrame(repo_features)
-repo_data = preprocess_data(df)
+repo_data = pd.DataFrame(repo_features)
 
 #Save to a CSV file
 repo_data.to_csv('repo_features.csv', index=False)

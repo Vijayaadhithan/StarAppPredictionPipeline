@@ -20,6 +20,21 @@ combined_data = pd.concat([data_set1, data_set2, data_set3, data_set4, data_set5
 """
 combined_data = pd.concat([data_set])
 
+
+# Process repo feature inputs, i.e one hot encode "language" and transform the date
+def preprocess_data(data):
+    data["created_at"] = pd.to_datetime(data["created_at"])
+    data['created_at'] = data['created_at'].dt.year
+    data["updated_at"] = pd.to_datetime(data["updated_at"])
+    data['updated_at'] = data['updated_at'].dt.year # this can also be converted to include months
+
+    if "language" in data.columns:
+        encoded = pd.get_dummies(data["language"], prefix="language")
+        data = pd.concat([data, encoded], axis=1)
+        data = data.drop(columns=["language"])
+    return data
+
+combined_data = preprocess_data(combined_data)
 # Optional: Reset the index of the combined data set
 combined_data.reset_index(drop=True, inplace=True)
 

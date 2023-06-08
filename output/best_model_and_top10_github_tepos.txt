@@ -1,0 +1,17 @@
+Linear Regression: 1.0
+Random Forest: 0.8451901378601822
+Decision Tree: 0.34888898452605444
+K-Nearest Neighbors: 0.9410354983186338
+
+Top 10 repositories based on star count:
+                       name  stars
+               freeCodeCamp 367866
+     free-programming-books 281073
+                    996.ICU 265967
+coding-interview-university 258454
+                    awesome 255993
+                public-apis 241523
+          developer-roadmap 240775
+       system-design-primer 221214
+                      react 208248
+                        vue 203843

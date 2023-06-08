@@ -22,10 +22,9 @@
    - name: Download git repository
      become: true
      git:
-      repo: 'https://user:token@github.com/cskoghed/DE2-project.git'
-      dest: /DE2-project
-      # repo: 'https://github.com/sztoor/model_serving.git'
-      # dest: /model_serving 
+      repo: 'https://github.com/Vijayaadhithan/Data_Eng_Proj_2.git'
+      dest: /Data_Eng_Proj_2
+      
       
    - name: Change ownership of a directory
      become: true
