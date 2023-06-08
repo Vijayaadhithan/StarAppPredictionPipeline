@@ -1,4 +1,4 @@
-# DE2-project
+# Predict star app using Ansible 
 Project repo for Data Engineering.
 Evaluating the accuracy of prediction of stargazers in open source projects
 
