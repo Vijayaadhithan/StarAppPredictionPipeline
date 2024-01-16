@@ -1,6 +1,6 @@
 # Predict star app using Ansible 
 Project repo for Data Engineering.
-Evaluating the accuracy of prediction of stargazers in open source projects
+Evaluating the accuracy of prediction of stargazers in Git hub repo using its token 
 
 To start the development and production server: 
 1. Go to model/single_node
