@@ -1,4 +1,29 @@
 # Predict star app using Ansible 
+
+## Overview
+
+The GitHub Star Predictor App is a machine learning-based application designed to forecast the star count for GitHub repositories. The project encompasses data collection from the top 1000 repositories, model training and evaluation, and an automated deployment pipeline for continuous integration and delivery.
+
+## Key Features
+
+## Data Ingestion:
+* Utilizes GitHub API to collect historical data from the top 1000 repositories.
+* Addresses API rate limits and implements error handling for robust data collection.
+## Data Governance:
+Ensures data integrity using RabbitMQ for messaging between distributed systems.
+## Workflow Orchestration:
+Ansible framework for configuration and contextualization of both development and production servers.
+## Data Transformation:
+Python program for data preprocessing, including one-hot encoding for the language column.
+## Data Processing:
+* Machine learning models (Linear Regression, Random Forest, Decision Tree, K-NN) were evaluated based on r2.
+* Celery framework on the production server for distributed prediction using Docker workers.
+## Integration and Deployment:
+* Git Hooks enables continuous integration and deployment.
+* Flask framework for a front-end component, providing web pages for scores, top GitHub repositories, and performance measurement.
+## Scalability:
+Docker on the production server allows for horizontal scalability with the addition of more workers.
+
 Project repo for Data Engineering.
 Evaluating the accuracy of prediction of stargazers in Git hub repo using its token 
 
