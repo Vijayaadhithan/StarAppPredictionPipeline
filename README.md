@@ -24,6 +24,7 @@ Python program for data preprocessing, including one-hot encoding for the langua
 ## Scalability:
 Docker on the production server allows for horizontal scalability with the addition of more workers.
 
+## To run this model follow the below steps:
 Project repo for Data Engineering.
 Evaluating the accuracy of prediction of stargazers in Git hub repo using its token 
 
